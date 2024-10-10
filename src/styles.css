@@ -42,17 +42,6 @@ nav button{
     position: relative;
 }
 
-
-.top{
-    width: 100%;
-    margin-top: 5rem;
-    display:  grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    justify-items: center;
-    align-items: center;
-}
-
 .second nav button{
     width: 8rem;
     height: 2rem;
@@ -60,23 +49,119 @@ nav button{
     border-radius: 0%;
 }
 
-.showcase{
-    margin: 2rem 0;
+.head, .lg-logo{
+   width: 100%;
+   margin-top: 20vh;
+   text-align: center; 
+}
+
+.lg-logo{
+    height: 50vh;
+}
+
+.lg-logo h2{
+    margin: 0;
+    font-size: 20vw;
+}
+
+.lg-logo h2 span{
+    margin: 0;
     padding: 0;
+    display: inline;
+}
+
+
+.brief{
+    padding: 2rem;
+    margin: 2.5rem 0;
+}
+
+.imgs{
+    display:  grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.text h2{
+    text-align: center;
+}
+
+.year{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 0 3rem;
+    margin-bottom: 5rem;
+}
+
+.contact{
     width: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
-.items ul{
-    padding-left: 2px;
-}
-
-.items ul li{
-    display: block;
-    list-style-type: none;
+.contact form{
+    grid-column: 2 / 3;
+    display: flex;
+    margin: 3rem 0;
     border: 1px solid;
-    padding: 12px;
-    font-weight: 600;
-    /* text-transform: uppercase; */
+    height: 300px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.contact form h2{
+    text-align: center;
+    margin: 0;
+}
+
+.contact form .inputbox{
+    height: 1.5rem;
+    width: 15rem;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.contact form .inputbox span{
+    position: absolute;
+    bottom: -4px;
+    left: 5px;
+     padding: 0.1rem 0.3rem;
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+.contact form .inputbox input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+
+.contact form .inputbox input:focus ~span,
+.contact form .inputbox input:valid ~span{
+    left: 0;
+    padding: 0 2px;
+    letter-spacing: 1.3px;
+    background: #fff;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    transform: translateY(-18px) translateX(10px);
+}
+
+.contact form button{
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    width: 15.5rem;
 }
 
 .footer{
