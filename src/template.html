@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <button>Home</button>
-            <button>Menu</button>
-            <button>Recipes</button>
-            <button>About</button>
-            <button>Reviews</button>
-        </nav>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="logo"><h2>Sizzle</h2></div>
+      <nav>
+        <button>Home</button>
+        <button>Menu</button>
+        <button>About</button>
+        <button>Reviews</button>
+      </nav>
     </header>
     <div id="content">
-        <!-- <div class="lil-imgs"></div>
-        <div class="lil-imgs"></div>
-        <div class="lil-imgs"></div>
-        <div class="lil-imgs"></div>
-        <div class="lil-imgs"></div>
-        <div class="lil-imgs"></div> -->
-        <div class="hero-section">
-            <div class="left">
-                <h1>Food..., <br> Just the way you love it!.</h1>
-                <p class="sub">Flavors that feel just like home</p>
-            </div>
-            <div class="right">
-                <img src="" alt="">
-            </div>
+      <div class="hero-section" id="flow">
+        <div class="left" id="intro-txt">
+          <h1 id="txt">
+            <span style="--j: 1">Food..,</span> <br />
+            <span style="--j: 2">Just the way</span> <br> <span style="--j: 3">you love it!.</span>
+          </h1>
+          <p class="sub" id="sub">Flavors that feel just like home</p>
         </div>
-        <div class="mid">
-            <div class="left">
-                <p>Food for moments you won't forget.</p>
-                <h2>Authenic taste, crafted with care.</h2>
-            </div>
-            <div class="right">
-                <img src="" alt="">
-            </div>
+      </div>
+      <div class="mid" id="mid">
+        <div class="left">
+          <img src="./Assets/ImageMId.png" class="hlimg mids"></img>
         </div>
-        <div class="day">
-            <div class="popular-recipes">    
-                <p>Check Out What's Hot Today</p>
-            </div>
-            <div class="boxes">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+        <div class="right">
+          <h2 class="ltxt mids" style="--i: 1">Authenic taste, crafted with care.</h2>
+          <p class="ltxt mids" style="--i: 2">Food for moments you won't forget.</p>
+          <img src="./Assets/sideDishPhoto.jpg" class="btm-img mids"/>
         </div>
-        <div class="footer">
-            <h2></h2>
-            <p>Making delicious memories since 2000.</p>
-            <p>Come Join Us!.</p>
+      </div>
+      <div class="award" id="award">
+        <div>
+        <img src="./Assets/left-anim.png" alt="">
         </div>
+        <div>
+          <h2>Your taste buds deserve the best. <span style="--i: 1"></span></h2>
+          <p>Find out why Sizzle is a national treasure among foodies!. <span style="--i: 2"></span></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aspernatur adipisci minima distinctio accusantium et quis at doloremque laudantium aperiam! <span style="--i: 3"></span></p>
+        </div>
+        <div>
+          <img src="./Assets/right-anim.png" alt="">
+        </div>
+      </div>
+      <div class="vid" id="vidpar">
+        <video muted id="video">
+          <source src="./Assets/theVid.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="day" id="par">
+        <div class="img-left himg">
+            <img src="./Assets/left-top.png"/>
+        </div>
+        <div class="bxs" id="boxp">
+          <div class="popular-recipes">
+            <p>Check Out What's Hot Today</p>
+          </div>
+          <div class="boxes">
+            <div style="--i:1"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:2"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:3"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:4"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:5"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:6"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:7"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:8"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+            <div style="--i:9"><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+          </div>
+        </div>
+        <div class="img-right himg">
+          <img src="./Assets/right-bottom.png"/>
+        </div>
+      </div>
+      <div class="footer" id="footer">
+        <h2>Sizzle.</h2>
+        <p>Making delicious memories since 2000.</p>
+        <p>Come Join Us!.</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

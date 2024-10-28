@@ -1,18 +1,72 @@
+@font-face {
+    font-family: "aspect";
+    src: url("./Assets/Fonts/land-unite.otf");
+}
+
+@font-face {
+    font-family: "badge";
+    src: url("./Assets/Fonts/Anderson\ Wakler\ 1.otf");
+}
+
+@font-face {
+    font-family: "refile";
+    src: url("./Assets/Fonts/Refile.otf");
+}
+
+@font-face {
+    font-family: "exotic";
+    src: url("./Assets/Fonts/Brittanyhustle.otf");
+}
+
+@font-face {
+    font-family: "leg";
+    src: url("./Assets/Fonts/Legquinne-Regular.otf");
+}
+
+@font-face {
+    font-family: "britt";
+    src: url("./Assets/Fonts/against\ regular.otf");
+}
+
 body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
+    /* color: linen; */
+    background: #fff;
+    font-family: "leg";
+    font-weight: bold;
 }
 
 header{
+    top: 0;
     height: 15vh;
     width: 100%;
     position: fixed;
     z-index: 100;
     margin: 0;
+    color: linen;
+}
+
+header.active{
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+
+div.logo{
+    position: absolute;
+    left: 0;
     top: 0;
+    padding: 0.5rem 1.5rem;
+}
+
+.logo h2{
+    margin: 0;
+    color: #15db95;
+    font-size: 2.5rem;
+    font-family: "britt";
 }
 
 header nav{
@@ -24,36 +78,127 @@ header nav{
 }
 
 nav button{
-    width: 5rem;
+    width: auto;
     height: 1.5rem;
-    margin-right: 0.5rem;
     border: none;
     outline: none;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
     border-bottom: 2px solid;
     border-radius: 5px;
     background: transparent;
+    color: white;
+    padding: 0 10px;
+    font-family: "refile";
+}
+
+nav button.active{
+    color: black;
 }
 
 #content{
     height: 100%;
-    width: 100%;
+    width: 100vw;
     position: relative;
+    overflow-x: hidden;
 }
 
-.lil-imgs{
-    position: absolute;
+
+#content > div{
+    overflow: hidden;
+}
+
+
+@keyframes hgt {
+    from{
+        height: 0;
+    }to{
+        height: 65vh;
+    }
 }
 
 .hero-section{
     width: 100%;
     height: 60vh;
     background: #0af;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("./Assets/hero-bg.jpg") center / cover;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    justify-items: center;
-    align-items: center;
+    overflow: hidden;
+    color: white;
+    animation: hgt 3s ease-in-out both;
 }
+
+h1{
+    position: relative;
+    font-family: "refile";
+}
+
+.sub{
+    position: relative;
+    left: 650px;
+    top: 190px;
+    opacity: 0;
+    font-size: 1.3rem;
+    color: #2dc653;
+    transition: all 1.5s ease;
+    transition-delay: 4s;
+    transform: translateY(50px);
+}
+
+h1 span{
+    font-size: 4rem;
+    color: white;
+    margin: 0;
+    position: absolute;
+    display: inline-block;
+}
+
+
+h1 span{
+    opacity: 0;
+    transition: all 1.5s ease;
+    transform: translateY(50px);
+}
+
+h1 span:nth-of-type(1){
+    left: 200px;
+    top: 50px;
+    font-size: 6rem;
+    transform: translateX(-100vw);
+    transition-delay: 0.5s;
+}
+
+h1 span:nth-of-type(2){
+    left: 500px;
+    top: 150px;
+    transform: translateX(100vw);
+    transition-delay: 2s;
+}
+
+h1 span:nth-of-type(3){
+    left: 600px;
+    top: 210px;
+    font-size: 5rem;
+    transition-delay: 3s;   
+}
+
+h1 span.active, .sub.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ltxt{
+    transition: all 2s ease;
+    transition-delay: calc(var(--i) * 1.1s);
+    transform: translateX(-100vw);
+}
+
+.ltxt.active{
+    transform: translate(0);
+}
+
 
 .mid{
     width: 100%;
@@ -61,19 +206,157 @@ nav button{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    place-items: center;
+    align-items: start;
+    justify-items: center;
 }
 
-.day{
-    width: 60vw;
-    height: auto;
-    border: 2px solid;
-    margin: 0 auto;
-    margin-bottom: 8rem;
-    border-radius: 20px;
+.right h2{
+    color: #2dc653;
+    font-family: "badge";
+    margin-bottom: 0;
+}
+
+.btm-img{
+    opacity: 0;
+    height: 150px;
+    width: 100%;
+    transition: all 2s ease 3.5s;
+    transform: translateX(100vw);
+}
+
+.btm-img.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.hlimg{
+    width: 300px;
+    height: 300px;
+    transition: all 5s ease;
+    transform: translateX(100vw);
+}
+
+.hlimg.active{
+    transform: translate(0);
+}
+
+.award{
+    width: 100%;
+    height: 50vh;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+@keyframes awards {
+    0% {
+    transform: translateY(150px) translateX(200px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(50px) translateX(100px) rotate(190deg);
+  }
+  75% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0) rotate(360deg);
+  }
+}
+
+.award div img{
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    display: block;
+    opacity: 0;
+    transition: all 2s ease;
+    transform: translate(160px, 250px) rotate(-45deg);
+}
+
+.award div img.active{
+    opacity: 1;
+    transform: translate(0) rotate(0);
+    animation: awards 2s ease forwards;
+}
+
+.award div h2{
+    color: #2dc653;
+    font-family: "badge";
+}
+
+.award div p{
+    font-size: 1.1rem;
+}
+
+.award div h2, .award div p{
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+.award div h2 span, .award div p span{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 2s ease;
+    transition-delay: calc(var(--i) * 0.3s);
+    background: #f8f1f1;
+}
+
+.award div h2 span.active, .award div p span.active{
+    width: 0%;
+}
+
+.award div p:nth-of-type(1){
+    margin: 15px 0;
+}
+
+.vid{
+    height: 50vh;
+    margin: 50vh 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.vid video{
+    height: 100%;
+    display: block;
+    width: 100%;
+    transition: all 2.5s ease;
+}
+
+
+.day{
+    width: 100%;
+    height: auto;
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+
+img{
+    display: block;
+    object-fit: cover;
+}
+
+.himg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.himg img{
+    width: 100px;
+    height: 100px;
 }
 
 .day .popular-recipes{
@@ -82,31 +365,181 @@ nav button{
     align-items: center;
 }
 
+.popular-recipes p{
+    font-size: 2rem;
+    font-family: "britt";
+    color: #2dc653;
+}
+
+.bxs{
+    border: 2px solid;
+    border-radius: 20px;
+    display: grid;
+    opacity: 0;
+    transition:  all 5s ease;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+.bxs.show{
+    opacity: 1;
+}
+
+
 .boxes{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
-    column-gap: 6rem;
-    padding: 1rem;
+    column-gap: 5rem;
+    padding: 1.5rem;
     padding-bottom: 2rem;
     margin: 0 auto;
 }
 
 .boxes div{
     width: 150px;
-    height: 150px;
-    border: 1px solid;
+    height: 200px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    border: 1px solid #15db95;
+    transition: all 2s ease;
+    transform: translateY(100vh);
+    transition-duration: calc(var(--i) * 0.5s);
+}
+
+.boxes div::before{
+    content: 'NEW';
+    position: absolute;
+    color: #fff;
+    height: 15px;
+    width: 40px;
+    right: 5px;
+    top: 5px;
+    padding: 3px;
+    text-align: center;
+    background: #15db9580;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.boxes div p{
+    padding: 10px;
+    margin: 0;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #15db9580;
+}
+
+.boxes div:nth-child(1){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/one.jpg") center / cover;
+    
+}
+.boxes div:nth-child(2){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/two.jpg") center / cover;
+    
+}
+.boxes div:nth-child(3){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/three.jpg") center / cover;
+    
+}
+.boxes div:nth-child(4){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/four.jpeg") center / cover;
+    
+}
+.boxes div:nth-child(5){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/five.jpg") center / cover;
+    
+}
+.boxes div:nth-child(6){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/six.jpeg") center / cover;
+    
+}
+.boxes div:nth-child(7){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/seven.jpeg") center / cover;
+    
+}
+.boxes div:nth-child(8){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/eight.jpeg") center / cover;
+    
+}
+.boxes div:nth-child(9){
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("./Assets/boxes/nine.jpg") center / cover;
+    
+}
+
+
+
+.boxes div.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.img-right, .img-left{
+    display: flex;
+    position: relative;
+}
+
+.img-left img{
+    opacity: 0;
+    height: auto;
+    width: auto;
+    position: absolute;
+    left: -280px;
+    top: -50px;
+    transition: all 1.5s ease;
+    transform: translateX(-100vw);
+}
+
+.img-left img.active{
+    opacity: 1;
+    transform: translate(0) scaleX(-1) rotate(45deg);
+}
+
+
+.img-right img{
+    opacity: 0;
+    transition: all 1.5s ease;
+    transition-delay: calc(var(--j) * 0.3);
+    transform: translateX(100vw);
+}
+
+.img-right img{
+    position: absolute;
+    bottom: -50px;
+    right: -15%;
+    height: auto;
+    width: auto;
+    border: none;
+}
+
+.img-right img.active{
+    opacity: 1;
+    transform: translate(0) rotate(-45deg);
 }
 
 .footer{
+    height: 20vh;
     width: 100%;
+    color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 2rem 0;
-    background-color: #00aaee80;
+    overflow: hidden;
+    background-color: #15db9580;
+}
+
+.footer h2{
+    margin: 0;
+    font-family: "exotic";
+    font-size: 4.5rem;
 }
 
 .footer p{
