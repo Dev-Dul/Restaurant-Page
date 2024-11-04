@@ -17,6 +17,7 @@ body{
     font-family: "koolegant";
 }
 
+
 header{
     height: 15vh;
     width: 100%;
@@ -66,7 +67,7 @@ nav button{
     position: sticky;
     top: 15vh;
     /* background: rgba(255, 255, 255, 0.1); */
-    background: white;
+    /* background: white; */
     backdrop-filter: blur(10px);
 }
 
@@ -96,13 +97,14 @@ nav button{
     border-radius: 50%;
     transition: all .8s;
     transform: translate(-50%, -50%);
-    background: linear-gradient(125.5deg, #2463d7, #63d9e6);
+    background: linear-gradient(125.5deg, #15db95, #8dffd7);
 }
 
 .second nav button:hover{
     color: white;
     scale: 1.2;
     margin: 0rem 1rem;
+    border: 2px solid white;
 }
 
 .second nav button:hover::before{
