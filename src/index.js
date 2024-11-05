@@ -1,10 +1,12 @@
+// import imgBank from "./images";
+
 const items = document.querySelectorAll(".items");
 const imgShowcase = document.querySelectorAll(".img-showcase");
+let imgIndex = 0;
 
 window.addEventListener("load", () => {
     const li = items[0].querySelectorAll("ul > li");
 
-    const breakfast = [""];
 
     items[0].classList.remove("hidden");
     imgShowcase[0].classList.add("active");
@@ -29,6 +31,9 @@ window.addEventListener("load", () => {
                         cimg.classList.remove("active");
                     })
                 });
+                // Body background effect
+                console.log(currIMgs[index].src);
+                document.body.style.backgroundImage = `url(${currIMgs[index].src})`;
                 
                 // Show the element on focus
                 tli.classList.add("selected");
@@ -36,6 +41,7 @@ window.addEventListener("load", () => {
                 let sp = tli.querySelector("span");
                 sp.classList.add("display");
                 currIMgs[index].classList.add("active");
+                imgIndex++;
                 
                 console.log(tli);
             });
@@ -46,6 +52,11 @@ window.addEventListener("load", () => {
 const buttons = document.querySelectorAll(".second nav button");
 buttons.forEach((btn, index) => {
     btn.addEventListener("click", () => {
+        buttons.forEach(bt => {
+            bt.classList.remove("selected");
+        });
+
+        btn.classList.add("selected");
         items.forEach((it) => {
             let itk = it.querySelectorAll("ul > li");
             it.classList.add("hidden");
