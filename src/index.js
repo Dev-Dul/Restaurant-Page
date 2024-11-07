@@ -6,8 +6,8 @@ const briefP = document.querySelector(".brief p");
 const imgs = document.querySelectorAll(".img-box img");
 const spans = document.querySelectorAll(".lg-logo h2 span");
 const year = document.getElementById("year");
-const yearh2 = document.querySelector(".year h2");
-const yearp = document.querySelector(".year p");
+const yearh2 = document.querySelector(".year .text h2");
+const yearp = document.querySelector(".year .text p");
 
 
 
@@ -57,6 +57,7 @@ const observer = new IntersectionObserver(
 
 const observer2 = new IntersectionObserver(
     entries => {
+        console.log(entries);
         entries.forEach(entry => {
             if(entry.isIntersecting){
                 spans.forEach(span => {
@@ -69,6 +70,7 @@ const observer2 = new IntersectionObserver(
                     });
                 }, 3000);
 
+                year.style.border = "2px solid red";
                 yearh2.classList.add("active");
                 yearp.classList.add("active");
 
@@ -78,6 +80,7 @@ const observer2 = new IntersectionObserver(
                   span.classList.remove("bg");
                 });
 
+                year.style.border = "none";
                 yearh2.classList.remove("active");
                 yearp.classList.remove("active");
             }

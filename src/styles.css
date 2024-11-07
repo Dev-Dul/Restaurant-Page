@@ -57,13 +57,19 @@ nav button{
 
 .head h2{
     opacity: 0;
+    font-size: 3rem;
+    margin: 0;
     transition: all 3s ease;
-    transform: translateY(100px);
+    transform: translateY(-100vh);
 }
 
 .head h2.active{
     opacity: 1;
     transform: translate(0);
+}
+
+h2:not(.lg-logo h2){
+    color: #15db95;
 }
 
 .lg-logo{
@@ -161,6 +167,7 @@ nav button{
 .text h2{
     text-align: center;
     margin-bottom: 0;
+    font-size: 2.5rem;
 }
 
 .text h2, .text p{
@@ -187,28 +194,27 @@ nav button{
     justify-items: center;
     align-items: center;
     padding: 0 3rem;
-    margin: 5rem 0;
+    margin: 10rem 0;
 }
 
-.year h2{
+.year .text h2{
     opacity: 0;
-    font-size: 2.5rem;
     transition: all 2s ease;
     transform: translateX(-100vw);
 }
 
-.year h2.active{
+.year .text h2.active{
     opacity: 1;
     transform: translate(0);
 }
 
-.year p{
-    width: 0;
+.year .text p{
+    width: 0%;
     opacity: 0;
     transition: all 2s ease;
 }
 
-.year p.active{
+.year .text p.active{
     width: auto;
     opacity: 1;
 }
