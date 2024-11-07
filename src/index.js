@@ -73,8 +73,7 @@ const observer = new IntersectionObserver(
     entries.forEach(entry => {
       if(entry.isIntersecting){
         boxp.classList.add("show");
-        
-        
+            
         boxes.forEach((box) => {
           box.classList.add("active");
         });
@@ -112,8 +111,7 @@ const observer = new IntersectionObserver(
         });
 
         // Remove the show class from boxp
-        boxp.classList.remove("show");
-        
+        boxp.classList.remove("show");      
         par.classList.remove("active");
 
         // remove classes on the check out what's new boxes
