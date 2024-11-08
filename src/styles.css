@@ -1,11 +1,11 @@
 @font-face {
     font-family: "aspect";
-    src: url("./Assets/Fonts/land-unite.otf");
+    src: url("./Assets/Fonts/ASPECT\ RANGE\ DEMO.otf");
 }
 
 @font-face {
-    font-family: "badge";
-    src: url("./Assets/Fonts/Anderson\ Wakler\ 1.otf");
+    font-family: "insight";
+    src: url("./Assets/Fonts/Insight.otf");
 }
 
 @font-face {
@@ -211,8 +211,9 @@ h1 span.active, .sub.active{
 
 .right h2{
     color: #2dc653;
-    font-family: "badge";
     margin-bottom: 0;
+    font-family: "insight";
+    letter-spacing: 1px
 }
 
 .btm-img{
@@ -280,7 +281,8 @@ h1 span.active, .sub.active{
 
 .award div h2{
     color: #2dc653;
-    font-family: "badge";
+    font-size: 1.8rem;
+    font-family: "insight";
 }
 
 .award div p{
