@@ -412,6 +412,7 @@ img{
     transition-duration: calc(var(--i) * 0.5s);
 }
 
+
 .boxes div::before{
     content: 'NEW';
     position: absolute;
