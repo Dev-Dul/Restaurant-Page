@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "insight";
+    src: url("./Assets3/Fonts/Insight.otf");
+}
+
+@font-face {
+    font-family: "aspect";
+    src: url("./Assets3/Fonts/aspect.ttf");
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -66,13 +76,17 @@ nav button{
     align-self: start;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
     /* background: white; */
 }
 
 .heading h2{
     opacity: 0;
     position: fixed;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    color: #15db95;
+    font-family: "aspect";
+    text-align: center;
     transition: all 2s ease;
     transform: translateY(150px);
 }
@@ -81,6 +95,7 @@ nav button{
     opacity: 1;
     transform: translate(0);
 }
+
 
 .reviews{
     display: grid;
@@ -96,7 +111,7 @@ nav button{
 .rev{
     opacity: 0;
     padding: 2rem;
-    border: 1px solid;
+    border: 1px solid #15db95;
     position: relative;
     color: white;
     border-radius: 10px;
@@ -125,7 +140,7 @@ nav button{
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid #15db95;
 }
 
 .rev:nth-of-type(even)::before{
@@ -134,6 +149,13 @@ nav button{
 
 .rev:nth-of-type(odd)::before{
     background: url("./Assets3/two.jpg") center / cover;
+}
+
+.rev h3{
+    color: #15db95;
+    font-size: 1.3rem;
+    letter-spacing: .8px;
+    font-family: "insight";
 }
 
 .stars{
