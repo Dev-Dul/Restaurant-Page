@@ -48,7 +48,10 @@ nav button{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* margin: 8rem 0;1 */
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("./Assets3/bg.jpg") center / cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .cust div{
@@ -63,11 +66,21 @@ nav button{
     align-self: start;
     justify-content: center;
     align-items: center;
+    /* background: white; */
 }
 
-/* .heading h2{
-    margin-top: 30vh;
-} */
+.heading h2{
+    opacity: 0;
+    position: fixed;
+    font-size: 2rem;
+    transition: all 2s ease;
+    transform: translateY(150px);
+}
+
+.heading h2.active{
+    opacity: 1;
+    transform: translate(0);
+}
 
 .reviews{
     display: grid;
@@ -81,10 +94,27 @@ nav button{
 }
 
 .rev{
+    opacity: 0;
     padding: 2rem;
     border: 1px solid;
     position: relative;
+    color: white;
     border-radius: 10px;
+    transition: all 1.5s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transform: translateY(200px);
+    transition-delay: calc(var(--r) * 0.5s);
+}
+
+.rev.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.rev.hidden{
+    opacity: 0;
+    transform: translateY(200px);
 }
 
 .rev::before{
@@ -95,7 +125,27 @@ nav button{
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 2px solid white;
+}
+
+.rev:nth-of-type(even)::before{
+    background: url("./Assets3/one.jpg") center / cover;
+}
+
+.rev:nth-of-type(odd)::before{
+    background: url("./Assets3/two.jpg") center / cover;
+}
+
+.stars{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.stars i{
+    display: inline-block;
+    margin: 0 2px;
+    color: yellow;
 }
 
 .footer{
