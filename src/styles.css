@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "britt";
+    src: url("./Assets3/Fonts/Brittanyhustle.otf");
+}
+
+@font-face {
+    font-family: "rallying";
+    src: url("./Assets3/Fonts/Insight.otf");
+}
+
+@font-face {
+    font-family: "stan";
+    src: url("./Assets3/Fonts/Stanbriged.ttf");
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -59,6 +74,7 @@ nav button{
     opacity: 0;
     font-size: 3rem;
     margin: 0;
+    font-family: "britt";
     transition: all 3s ease;
     transform: translateY(-100vh);
 }
@@ -70,12 +86,12 @@ nav button{
 
 h2:not(.lg-logo h2){
     color: #15db95;
+    font-family: "rallying";
 }
 
 .lg-logo{
     height: 50vh;
     overflow: hidden;
-    border: 1px solid red;
 }
 
 .lg-logo h2{
@@ -89,7 +105,8 @@ h2:not(.lg-logo h2){
     padding: 0;
     opacity: 0;
     display: inline-block;
-    transition: all 1.5s ease;
+    font-family: "stan";
+    transition: all 1s ease;
     transform: translateY(100vh);
     transition-delay: calc(var(--s) * 0.2s);
 }
@@ -115,6 +132,7 @@ h2:not(.lg-logo h2){
 .brief p{
     width: 0%;
     opacity: 0;
+    overflow: hidden;
     transition: all 3s ease;
 }
 
@@ -141,7 +159,7 @@ h2:not(.lg-logo h2){
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: all 2s ease;
+    transition: all 1.5s ease;
 }
 
 .img-box:first-of-type img{
@@ -180,7 +198,7 @@ h2:not(.lg-logo h2){
     height: 100%;
     right: 0;
     transition: all 2.5s ease;
-    background: #000;
+    background: #15db95;
 }
 
 .cover.active{
@@ -188,6 +206,8 @@ h2:not(.lg-logo h2){
 }
 
 .year{
+    width: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -195,11 +215,12 @@ h2:not(.lg-logo h2){
     align-items: center;
     padding: 0 3rem;
     margin: 10rem 0;
+    overflow: hidden;
 }
 
 .year .text h2{
     opacity: 0;
-    transition: all 2s ease;
+    transition: all 2.5s ease;
     transform: translateX(-100vw);
 }
 
@@ -215,8 +236,19 @@ h2:not(.lg-logo h2){
 }
 
 .year .text p.active{
-    width: auto;
+    width: 100%;
     opacity: 1;
+}
+
+.year div img{
+    opacity: 0;
+    transition: all 1.5s ease;
+    transform: translateY(200px);
+}
+
+.year div img.active{
+    opacity: 1;
+    transform: translate(0);
 }
 
 .contact{
@@ -230,9 +262,9 @@ h2:not(.lg-logo h2){
     grid-column: 2 / 3;
     display: flex;
     margin: 3rem 0;
-    border: 1px solid;
+    border: 1px solid #15db95;
     height: 300px;
-    width: 300px;
+    width: 450px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -246,7 +278,7 @@ h2:not(.lg-logo h2){
 
 .contact form .inputbox{
     height: 1.5rem;
-    width: 15rem;
+    width: 20rem;
     margin-top: 1.5rem;
     position: relative;
 }
@@ -281,8 +313,12 @@ h2:not(.lg-logo h2){
     display: block;
     margin: 0 auto;
     padding: 0.5rem 0;
-    margin-top: 1rem;
-    width: 15.5rem;
+    width: 20.5rem;
+    margin-top: 1.2rem;
+    background: #15db95;
+    color: white;
+    border: none;
+    outline: none;
 }
 
 .footer{

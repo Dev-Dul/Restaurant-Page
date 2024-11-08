@@ -8,6 +8,7 @@ const spans = document.querySelectorAll(".lg-logo h2 span");
 const year = document.getElementById("year");
 const yearh2 = document.querySelector(".year .text h2");
 const yearp = document.querySelector(".year .text p");
+const yearImg = document.querySelector(".year div img");
 
 
 
@@ -56,35 +57,38 @@ const observer = new IntersectionObserver(
 );
 
 const observer2 = new IntersectionObserver(
-    entries => {
-        console.log(entries);
+    (entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
-                spans.forEach(span => {
-                    span.classList.add("active");
-                });
-
-                setTimeout(() => {
-                    spans.forEach((span) => {
-                      span.classList.add("bg");
+                if(entry.target.classList.contains("lg-logo")){
+                    spans.forEach(span => {
+                        span.classList.add("active");
                     });
-                }, 3000);
-
-                year.style.border = "2px solid red";
-                yearh2.classList.add("active");
-                yearp.classList.add("active");
+    
+                    setTimeout(() => {
+                        spans.forEach((span) => {
+                          span.classList.add("bg");
+                        });
+                    }, 3000);
+                }else if(entry.target.classList.contains("year")){
+                    yearh2.classList.add("active");
+                    yearp.classList.add("active");
+                    yearImg.classList.add("active");
+                }
 
             }else{
-                spans.forEach((span) => {
-                  span.classList.remove("active");
-                  span.classList.remove("bg");
-                });
-
-                year.style.border = "none";
-                yearh2.classList.remove("active");
-                yearp.classList.remove("active");
+                if (entry.target.classList.contains("lg-logo")) {
+                  spans.forEach((span) => {
+                    span.classList.remove("active");
+                    span.classList.remove("bg");
+                  });
+                } else if (entry.target.classList.contains("year")){
+                    yearh2.classList.remove("active");
+                    yearp.classList.remove("active");
+                    yearImg.classList.remove("active");
+                }
             }
-        })
+        });
     }, {threshold: 0.5}
 );
 
