@@ -373,7 +373,7 @@ img{
 }
 
 .bxs{
-    border: 2px solid;
+    border: 2px solid #15db95;
     border-radius: 20px;
     display: grid;
     opacity: 0;
