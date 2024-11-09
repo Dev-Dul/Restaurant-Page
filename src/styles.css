@@ -3,10 +3,6 @@
     src: url("./Assets3/Fonts/Brittanyhustle.otf");
 }
 
-@font-face {
-    font-family: "rallying";
-    src: url("./Assets3/Fonts/Insight.otf");
-}
 
 @font-face {
     font-family: "stan";
@@ -86,7 +82,7 @@ nav button{
 
 h2:not(.lg-logo h2){
     color: #15db95;
-    font-family: "rallying";
+    font-family: "insight";
 }
 
 .lg-logo{
@@ -321,17 +317,4 @@ h2:not(.lg-logo h2){
     outline: none;
 }
 
-.footer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem 0;
-    margin-top: auto;
-    background-color: #00aaee80;
-}
 
-.footer p{
-    margin: 0.5rem;
-}

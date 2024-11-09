@@ -4,6 +4,7 @@ import ImgTwo from "./Assets3/two.png";
 import ImgThree from "./Assets3/three.png";
 
 const aboutEngine = (function() {
+  const aboutBtn = document.getElementById("about-btn");
     function geneRate(){
         const content = document.getElementById("content");
         const divArr = [
@@ -208,9 +209,10 @@ const aboutEngine = (function() {
         const yearp = document.querySelector(".year .text p");
         const yearImg = document.querySelector(".year div img");
 
-        // about.addEventListener("click", () => {
-
-        // })
+        aboutBtn.addEventListener("click", () => {
+          hstory.classList.add("active");
+          briefP.classList.add("active");
+        })
 
         window.addEventListener("load", () => {
           hstory.classList.add("active");
