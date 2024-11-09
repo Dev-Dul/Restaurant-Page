@@ -176,6 +176,9 @@ const menuEngine = (function(){
               // Body background effect
               console.log(currIMgs[index].src);
               document.body.style.backgroundImage = `url(${currIMgs[index].src})`;
+              document.body.style.backgroundPosition = "-50px 150px";
+              document.body.style.backgroundSize = "110vh";
+              document.body.style.backgroundRepeat = "no-repeat";
 
               // Show the element on focus
               tli.classList.add("selected");
