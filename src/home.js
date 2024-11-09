@@ -7,7 +7,7 @@ import leftTop from "./Assets/left-top.png";
 import rightBottom from "./Assets/right-bottom.png";
 
 const home = (function () {
-  function loadHome() {
+  function geneRATE() {
     const content = document.getElementById("content");
     const classNames = ["hero-section", "mid", "award", "vid", "day", "footer"];
     const idNames = ["flow", "mid", "award", "vidpar", "par", "footer"];
@@ -177,7 +177,7 @@ const home = (function () {
     content.children[5].appendChild(pf2);
   }
 
-  function loadHomeEffects() {
+  function decoRATE() {
     const flow = document.getElementById("flow");
     const mid = document.getElementById("mid");
     const txt = document.getElementById("intro-txt"),
@@ -330,7 +330,7 @@ const home = (function () {
     vidObserver.observe(vidpar);
   }
 
-  return { loadHome, loadHomeEffects };
+  return { geneRATE, decoRATE };
 })();
 
 export { home };

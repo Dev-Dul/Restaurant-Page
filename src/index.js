@@ -1,4 +1,3 @@
-console.log("Hello World!");
 const header = document.getElementById("header");
 const flow = document.getElementById("flow");
 const mid = document.getElementById("mid");

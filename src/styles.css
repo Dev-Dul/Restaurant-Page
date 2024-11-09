@@ -1,9 +1,4 @@
 @font-face {
-    font-family: "aspect";
-    src: url("./Assets/Fonts/ASPECT\ RANGE\ DEMO.otf");
-}
-
-@font-face {
     font-family: "insight";
     src: url("./Assets/Fonts/Insight.otf");
 }
@@ -24,7 +19,7 @@
 }
 
 @font-face {
-    font-family: "britt";
+    font-family: "against";
     src: url("./Assets/Fonts/against\ regular.otf");
 }
 
@@ -65,7 +60,7 @@ div.logo{
     margin: 0;
     color: #15db95;
     font-size: 2.5rem;
-    font-family: "britt";
+    font-family: "against";
 }
 
 header nav{
@@ -368,7 +363,7 @@ img{
 
 .popular-recipes p{
     font-size: 2rem;
-    font-family: "britt";
+    font-family: "against";
     color: #2dc653;
 }
 
