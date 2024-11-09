@@ -282,17 +282,3 @@ nav button{
     transform: translate(0);
 }
 
-.footer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem 0;
-    margin-top: auto;
-    background-color: #15db95;
-}
-
-.footer p{
-    margin: 0.5rem;
-}

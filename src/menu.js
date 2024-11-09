@@ -1,6 +1,7 @@
 import imgBank from "./images.js";
 const menuEngine = (function(){
-    function geneRAte(){
+  const menuBtn = document.getElementById("menu-btn");
+    function geneRATE(){
         const content = document.getElementById("content");
 
         const classes = ["top", "bottom", "footer"];
@@ -129,14 +130,24 @@ const menuEngine = (function(){
         content.children[2].appendChild(footerp2);
     }
 
-    function decoRate(){
-      // import imgBank from "./images";
-
+    function decoRATE(){
       const items = document.querySelectorAll(".items");
       const imgShowcase = document.querySelectorAll(".img-showcase");
       let imgIndex = 0;
 
       window.addEventListener("load", () => {
+        const li = items[0].querySelectorAll("ul > li");
+
+        items[0].classList.remove("hidden");
+        imgShowcase[0].classList.add("active");
+
+        li.forEach((eli) => {
+          eli.classList.remove("hidden");
+        });
+
+      });
+
+      menuBtn.addEventListener("click", () => {
         const li = items[0].querySelectorAll("ul > li");
 
         items[0].classList.remove("hidden");
@@ -213,7 +224,7 @@ const menuEngine = (function(){
       });
     }
 
-    return {geneRAte, decoRate};
+    return {geneRATE, decoRATE};
 
 })();
 
