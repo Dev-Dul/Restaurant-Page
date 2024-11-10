@@ -46,7 +46,7 @@
 
 @font-face {
     font-family: "aspect";
-    src: url("./Assets3/Fonts/aspect.ttf");
+    src: url("./Assets4/Fonts/aspect.ttf");
 }
 
 body{
@@ -1091,7 +1091,7 @@ h2:not(.lg-logo h2){
     justify-content: space-around;
     align-items: center;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("./Assets3/bg.jpg") center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("./Assets4/bg.jpg") center / cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -1175,11 +1175,11 @@ h2:not(.lg-logo h2){
 }
 
 .rev:nth-of-type(even)::before{
-    background: url("./Assets3/one.jpg") center / cover;
+    background: url("./Assets4/one.jpg") center / cover;
 }
 
 .rev:nth-of-type(odd)::before{
-    background: url("./Assets3/two.jpg") center / cover;
+    background: url("./Assets4/two.jpg") center / cover;
 }
 
 .rev h3{
