@@ -9,11 +9,6 @@
 }
 
 @font-face {
-    font-family: "exotic";
-    src: url("./Assets/Fonts/Brittanyhustle.otf");
-}
-
-@font-face {
     font-family: "leg";
     src: url("./Assets/Fonts/Legquinne-Regular.otf");
 }
@@ -36,6 +31,17 @@
 @font-face {
     font-family: "rockabye";
     src: url("./Assets2/1-fonts/Rockabye-Regular.otf");
+}
+
+@font-face {
+    font-family: "britt";
+    src: url("./Assets3/Fonts/Brittanyhustle.otf");
+}
+
+
+@font-face {
+    font-family: "stan";
+    src: url("./Assets3/Fonts/Stanbriged.ttf");
 }
 
 body{
@@ -556,7 +562,7 @@ img{
 
 .footer h2{
     margin: 0;
-    font-family: "exotic";
+    font-family: "britt";
     font-size: 4.5rem;
 }
 
@@ -803,4 +809,272 @@ nav button{
 .img-showcase img.active{
     transform: translate(0);
 }
+
+/* Styles About */
+
+
+.second nav button{
+    width: 8rem;
+    height: 2rem;
+    border: 1px solid;
+    border-radius: 0%;
+}
+
+.head, .lg-logo{
+   width: 100%;
+   margin-top: 20vh;
+   text-align: center; 
+}
+
+.head h2{
+    opacity: 0;
+    font-size: 3rem;
+    margin: 0;
+    font-family: "britt";
+    transition: all 3s ease;
+    transform: translateY(-100vh);
+}
+
+.head h2.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+h2:not(.lg-logo h2){
+    color: #15db95;
+    font-family: "insight";
+}
+
+.lg-logo{
+    height: 50vh;
+    overflow: hidden;
+}
+
+.lg-logo h2{
+    margin: 0;
+    font-size: 20vw;
+}
+
+
+.lg-logo h2 span{
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    display: inline-block;
+    font-family: "stan";
+    transition: all 1s ease;
+    transform: translateY(100vh);
+    transition-delay: calc(var(--s) * 0.2s);
+}
+
+
+.lg-logo h2 span.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.lg-logo h2 span.bg{
+    background: url("./Assets3/five.jpg") center / cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brief{
+    padding: 2rem;
+    margin: 2.5rem 0;
+}
+
+.brief p{
+    width: 0%;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 3s ease;
+}
+
+.brief p.active{
+    width: 100%;
+    opacity: 1;
+}
+
+.imgs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.imgs > div{
+    height: 100%;
+    width: 100%;
+}
+
+.img-box img{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.img-box:first-of-type img{
+    transform: translateX(-100vw);
+}
+
+.img-box:nth-child(3) img{
+    transform: translateX(100vw);
+}
+
+.img-box img.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text h2{
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+}
+
+.text h2, .text p{
+    position: relative;
+}
+
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    transition: all 2.5s ease;
+    background: #15db95;
+}
+
+.cover.active{
+    width: 0%;
+}
+
+.year{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 0 3rem;
+    margin: 10rem 0;
+    overflow: hidden;
+}
+
+.year .text h2{
+    opacity: 0;
+    transition: all 2.5s ease;
+    transform: translateX(-100vw);
+}
+
+.year .text h2.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.year .text p{
+    width: 0%;
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.year .text p.active{
+    width: 100%;
+    opacity: 1;
+}
+
+.year div img{
+    opacity: 0;
+    transition: all 1.5s ease;
+    transform: translateY(200px);
+}
+
+.year div img.active{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.contact{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.contact form{
+    grid-column: 2 / 3;
+    display: flex;
+    margin: 3rem 0;
+    border: 1px solid #15db95;
+    height: 300px;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.contact form h2{
+    text-align: center;
+    margin: 0;
+}
+
+.contact form .inputbox{
+    height: 1.5rem;
+    width: 20rem;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.contact form .inputbox span{
+    position: absolute;
+    bottom: -4px;
+    left: 5px;
+     padding: 0.1rem 0.3rem;
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+.contact form .inputbox input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+
+.contact form .inputbox input:focus ~span,
+.contact form .inputbox input:valid ~span{
+    left: 0;
+    padding: 0 2px;
+    letter-spacing: 1.3px;
+    background: #fff;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    transform: translateY(-18px) translateX(10px);
+}
+
+.contact form button{
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    width: 20.5rem;
+    margin-top: 1.2rem;
+    background: #15db95;
+    color: white;
+    border: none;
+    outline: none;
+}
+
 
