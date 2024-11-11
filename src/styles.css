@@ -619,6 +619,11 @@ nav button{
     backdrop-filter: blur(10px);
 }
 
+.top.hidden{
+    position: relative;
+    transform: translate(-100vh);
+}
+
 .first h2{
     margin: 0;
     color: #15db95;
