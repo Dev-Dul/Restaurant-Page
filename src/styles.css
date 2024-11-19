@@ -49,6 +49,11 @@
     src: url("./Assets4/Fonts/aspect.ttf");
 }
 
+
+*{
+    border: 1px solid red;
+}
+
 body{
     margin: 0;
     padding: 0;

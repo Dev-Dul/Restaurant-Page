@@ -5,8 +5,8 @@ import ImgThree from "./Assets3/three.png";
 
 const aboutEngine = (function() {
   const aboutBtn = document.getElementById("about-btn");
-    function geneRate(){
-        const content = document.getElementById("content");
+  const content = document.getElementById("content");
+    function geneRATE(){
         const divArr = [
           "head",
           "brief",
@@ -33,7 +33,7 @@ const aboutEngine = (function() {
 
         // Second div (brief)
         let p = document.createElement("p");
-        p.textContent = `Lorem ipsum dolor sit amet     consectetur adipisicing elit. Porro magna
+        p.textContent = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro magna
           alias perspiciatis eligendi veniam provident, rem nulla voluptatibus,
           voluptas repudiandae officiis rerum quae voluptatum aliquid incidunt.
           Dolore, iusto? Veniam facilis, architecto dolores voluptas labore qui
@@ -54,7 +54,7 @@ const aboutEngine = (function() {
 
         content.children[1].appendChild(p);
 
-        // Thid div (Imgs)
+        // Third div (Imgs)
         const imgsArr = ["img-box", "text", "img-box"];
         for (let i = 0; i < 3; i++) {
           let div2 = document.createElement("div");
@@ -197,7 +197,7 @@ const aboutEngine = (function() {
     }
 
     function decoRATE(){
-        const img = document.getElementById("imgs");
+        const img = document.querySelector("#imgs");
         const logo = document.getElementById("lg-logo");
         const covers = document.querySelectorAll(".cover");
         const hstory = document.querySelector(".head h2");
@@ -262,18 +262,18 @@ const aboutEngine = (function() {
                       span.classList.add("bg");
                     });
                   }, 3000);
-                } else if (entry.target.classList.contains("year")) {
+                } else if (entry.target.classList.contains("year")){
                   yearh2.classList.add("active");
                   yearp.classList.add("active");
                   yearImg.classList.add("active");
                 }
               } else {
-                if (entry.target.classList.contains("lg-logo")) {
+                if (entry.target.classList.contains("lg-logo")){
                   spans.forEach((span) => {
                     span.classList.remove("active");
                     span.classList.remove("bg");
                   });
-                } else if (entry.target.classList.contains("year")) {
+                } else if (entry.target.classList.contains("year")){
                   yearh2.classList.remove("active");
                   yearp.classList.remove("active");
                   yearImg.classList.remove("active");
@@ -289,7 +289,7 @@ const aboutEngine = (function() {
         observer2.observe(year);
     }
 
-    return {geneRate, decoRATE};
+    return {geneRATE, decoRATE};
 })();
 
 export default aboutEngine;

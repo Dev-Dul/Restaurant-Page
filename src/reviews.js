@@ -1,8 +1,7 @@
 const reviewsEngine = (function(){
     const revBtn = document.getElementById("rev-btn");
+    const content = document.getElementById("content");
     function geneRATE(){
-        const content = document.getElementById("content");
-
         const divCl = ["cust", "footer"];
         for (let i = 0; i < 2; i++) {
           let div = document.createElement("div");

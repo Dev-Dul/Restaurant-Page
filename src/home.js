@@ -7,12 +7,12 @@ import leftTop from "./Assets/left-top.png";
 import rightBottom from "./Assets/right-bottom.png";
 
 const home = (function () {
+  const content = document.getElementById("content");
   function geneRATE() {
-    const content = document.getElementById("content");
     const classNames = ["hero-section", "mid", "award", "vid", "day", "footer"];
     const idNames = ["flow", "mid", "award", "vidpar", "par", "footer"];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       let div = document.createElement("div");
       div.setAttribute("class", classNames[i]);
       div.setAttribute("id", idNames[i]);
@@ -24,10 +24,10 @@ const home = (function () {
     let firstDiv = document.createElement("div");
     firstDiv.setAttribute("class", "left");
     firstDiv.setAttribute("id", "intro-txt");
-    let p = document.createElement("p");
-    p.setAttribute("id", "sub");
-    p.setAttribute("class", "sub");
-    p.textContent = "Flavors that feel just like home.";
+    let Introp = document.createElement("p");
+    Introp.setAttribute("id", "sub");
+    Introp.setAttribute("class", "sub");
+    Introp.textContent = "Flavors that feel just like home.";
 
     const spanText = ["Food..,", "Just the way", "you love it!."];
     let h1 = document.createElement("h1");
@@ -42,7 +42,7 @@ const home = (function () {
     }
 
     firstDiv.appendChild(h1);
-    firstDiv.appendChild(p);
+    firstDiv.appendChild(Introp);
     content.children[0].appendChild(firstDiv);
 
     // Second Div Engine (mid)
@@ -80,10 +80,11 @@ const home = (function () {
 
     // Third Div Engine (Award)
     const awImgs = [leftAnim, rightAnim];
+    let awIndex = 0;
     for (let i = 0; i < 3; i++) {
       let div = document.createElement("div");
       let img = document.createElement("img");
-      img.src = awImgs[i];
+      img.src = awImgs[awIndex];
 
       if (i === 1) {
         let h2 = document.createElement("h2");
@@ -109,6 +110,10 @@ const home = (function () {
         div.appendChild(img);
       }
 
+      if(i < 2){
+        awIndex++;
+      }
+
       content.children[2].appendChild(div);
     }
 
@@ -127,11 +132,12 @@ const home = (function () {
     // Fifth Div Engine (day)
     const dayArr = ["img-left himg", "bxs", "img-right himg"];
     const dayImgs = [leftTop, rightBottom];
+    let dayIndex = 0;
     for (let i = 0; i < 3; i++) {
       let div = document.createElement("div");
       div.setAttribute("class", dayArr[i]);
       let img = document.createElement("img");
-      img.src = dayImgs[i];
+      img.src = dayImgs[dayIndex];
 
       if (i === 1) {
         let div2 = document.createElement("div");
@@ -152,13 +158,16 @@ const home = (function () {
 
           div3.appendChild(div4);
         }
-
+        div.setAttribute("id", "boxp");
         div.appendChild(div2);
         div.appendChild(div3);
       } else {
         div.appendChild(img);
       }
 
+      if(i < 2){
+        dayIndex++;
+      }
       content.children[4].appendChild(div);
     }
 
@@ -167,7 +176,7 @@ const home = (function () {
     h2f.textContent = "Sizzle.";
 
     let pf = document.createElement("p");
-    p.textContent = "Making delicious memories since 2000.";
+    pf.textContent = "Making delicious memories since 2000.";
 
     let pf2 = document.createElement("p");
     pf2.textContent = "Come Join Us!";
@@ -175,6 +184,7 @@ const home = (function () {
     content.children[5].appendChild(h2f);
     content.children[5].appendChild(pf);
     content.children[5].appendChild(pf2);
+    
   }
 
   function decoRATE() {
@@ -186,10 +196,10 @@ const home = (function () {
       award = document.getElementById("award"),
       awimgs = document.querySelectorAll(".award div img"),
       awtxt = document.querySelectorAll(".award div h2 span, .award div p span"),
-      video = document.getElementById("video"),
-      vidpar = video.parentElement;
-      mids = document.getElementsByClassName("mids"),
-      par = document.getElementById("par"),
+      video = document.getElementById("video");
+      // vidpar = video.parentElement;
+    const mids = document.getElementsByClassName("mids");
+    const par = document.getElementById("par"),
       boxp = document.getElementById("boxp"),
       himgs = document.getElementsByClassName("himg"),
       boxes = document.querySelectorAll(".boxes div"),
@@ -220,6 +230,7 @@ const home = (function () {
       setTimeout(checkActivation, 5000); // Small delay if needed to ensure order
     });
 
+  const btns = document.querySelectorAll("header nav button");
    const flowObserver = new IntersectionObserver((entries) => {
      entries.forEach((entry) => {
        if (entry.isIntersecting === false) {
@@ -327,7 +338,7 @@ const home = (function () {
       { threshold: 0.5}
     );
 
-    vidObserver.observe(vidpar);
+    // vidObserver.observe(vidpar);
   }
 
   return { geneRATE, decoRATE };

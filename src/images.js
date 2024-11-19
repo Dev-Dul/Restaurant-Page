@@ -16,7 +16,7 @@ import fourL from "./Assets2/fourL.png";
 import fiveL from "./Assets2/fiveL.png";
 import sixL from "./Assets2/sixL.png";
 import sevenL from "./Assets2/sevenL.jpeg";
-import eightL from "./Assets2/eighLt.png";
+import eightL from "./Assets2/eightL.png";
 import nineL from "./Assets2/nineL.png";
 import tenL from "./Assets2/tenL.png";
 

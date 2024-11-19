@@ -1,11 +1,11 @@
 import imgBank from "./images.js";
-const menuEngine = (function(){
-  const menuBtn = document.getElementById("menu-btn");
-    function geneRATE(){
-        const content = document.getElementById("content");
+const menuBtn = document.getElementById("menu-btn");
+const content = document.getElementById("content");
 
+const menuEngine = (function(){
+    function geneRATE(){
         const classes = ["top", "bottom", "footer"];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 3; i++) {
           let div = document.createElement("div");
           div.setAttribute("class", classes[i]);
 
@@ -26,10 +26,10 @@ const menuEngine = (function(){
           } else {
             let nav = document.createElement("nav");
             for (let j = 0; j < 4; j++) {
-              let btn = document.createElement("button");
-              btn.textContent = btn[j];
+              let bt = document.createElement("button");
+              bt.textContent = btn[j];
 
-              nav.appendChild(btn);
+              nav.appendChild(bt);
             }
 
             div2.appendChild(nav);
@@ -50,28 +50,30 @@ const menuEngine = (function(){
           "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
           "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, vero",
         ];
-        function liFactory() {
-          let i = 0;
+
+        let licounter  = 0;
+        function liFactory(){
           let li = document.createElement("li");
           let spanli = document.createElement("span");
           spanli.setAttribute("class", "arrow");
+          li.append(spanli);
 
-          li.setAttribute("style", `--li: ${i + 1}`);
+          li.setAttribute("style", `--li: ${licounter + 1}`);
           li.setAttribute("class", "hidden");
-          li.appendChild(spanli);
-          li.textContent = lic[i];
+          li.textContent = lic[licounter];
 
-          i++;
+          licounter++;
+          // console.log(spanli);
           return li;
         }
 
-        function imgFactory() {
-          let i = 0;
+        let imgCounter = 0;
+        function imgFactory(){
           let img = document.createElement("img");
-          img.src = imgBank[i];
+          img.src = imgBank[imgCounter];
 
-          i++;
-          return li;
+          imgCounter++;
+          return img;
         }
 
         const show = [
@@ -135,23 +137,27 @@ const menuEngine = (function(){
       const imgShowcase = document.querySelectorAll(".img-showcase");
       let imgIndex = 0;
 
-      window.addEventListener("load", () => {
-        const li = items[0].querySelectorAll("ul > li");
+      // window.addEventListener("load", () => {
+      //   const li = items[0].querySelectorAll("ul > li");
 
-        items[0].classList.remove("hidden");
-        imgShowcase[0].classList.add("active");
+      //   items[0].classList.remove("hidden");
+      //   imgShowcase[0].classList.add("active");
 
-        li.forEach((eli) => {
-          eli.classList.remove("hidden");
-        });
-
-      });
+      //   li.forEach((eli) => {
+      //     eli.classList.remove("hidden");
+      //   });
+        
+      // });
 
       menuBtn.addEventListener("click", () => {
         const li = items[0].querySelectorAll("ul > li");
+        console.log(li);
 
         items[0].classList.remove("hidden");
         imgShowcase[0].classList.add("active");
+        console.log(items[0]);
+        console.log(imgShowcase[0]);
+
 
         li.forEach((eli) => {
           eli.classList.remove("hidden");
@@ -163,7 +169,7 @@ const menuEngine = (function(){
           // Run a loop through all li elements and attach an event listener to each one
           lis.forEach((tli, index) => {
             tli.addEventListener("click", () => {
-              // hide all other elements whose event has'nt been triggered
+              // hide all other elements whose event hasn't been triggered
               lis.forEach((inner) => {
                 inner.classList.remove("selected");
                 inner.style.opacity = "0.5";
@@ -189,7 +195,7 @@ const menuEngine = (function(){
               currIMgs[index].classList.add("active");
               imgIndex++;
 
-              console.log(tli);
+              // console.log(tli);
             });
           });
         });
