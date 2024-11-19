@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   menuBtn.addEventListener("click", () => {
     clear();
     menuEngine.geneRATE();
-    // menuEngine.decoRATE();
+    menuEngine.decoRATE();
     console.log("menu button clicked!!");
   });
 
