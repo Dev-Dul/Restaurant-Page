@@ -60,9 +60,13 @@ const menuEngine = (function(){
 
           li.setAttribute("style", `--li: ${licounter + 1}`);
           li.setAttribute("class", "hidden");
-          li.textContent = lic[licounter];
+          li.append(document.createTextNode(lic[licounter]));
 
-          licounter++;
+          if(licounter < lic.length){
+            licounter++;
+          }else if(licounter >= lic.length){
+            licounter = 0;
+          }
           // console.log(spanli);
           return li;
         }
@@ -72,7 +76,10 @@ const menuEngine = (function(){
           let img = document.createElement("img");
           img.src = imgBank[imgCounter];
 
-          imgCounter++;
+          if(imgCounter < imgBank.length){
+            imgCounter++;
+          }
+
           return img;
         }
 
@@ -130,111 +137,212 @@ const menuEngine = (function(){
         content.children[2].appendChild(footerh2);
         content.children[2].appendChild(footerp1);
         content.children[2].appendChild(footerp2);
-    }
 
-    function decoRATE(){
-      const items = document.querySelectorAll(".items");
-      const imgShowcase = document.querySelectorAll(".img-showcase");
-      let imgIndex = 0;
+        // DECORATE
 
-      // window.addEventListener("load", () => {
-      //   const li = items[0].querySelectorAll("ul > li");
+        const items = document.querySelectorAll(".items");
+        const imgShowcase = document.querySelectorAll(".img-showcase");
+        let imgIndex = 0;
 
-      //   items[0].classList.remove("hidden");
-      //   imgShowcase[0].classList.add("active");
+        // window.addEventListener("load", () => {
+        //   const li = items[0].querySelectorAll("ul > li");
 
-      //   li.forEach((eli) => {
-      //     eli.classList.remove("hidden");
-      //   });
-        
-      // });
+        //   items[0].classList.remove("hidden");
+        //   imgShowcase[0].classList.add("active");
 
-      menuBtn.addEventListener("click", () => {
-        const li = items[0].querySelectorAll("ul > li");
-        console.log(li);
+        //   li.forEach((eli) => {
+        //     eli.classList.remove("hidden");
+        //   });
 
-        items[0].classList.remove("hidden");
-        imgShowcase[0].classList.add("active");
-        console.log(items[0]);
-        console.log(imgShowcase[0]);
+        // });
 
+        menuBtn.addEventListener("click", () => {
+          const li = items[0].querySelectorAll("ul > li");
+          console.log(li);
 
-        li.forEach((eli) => {
-          eli.classList.remove("hidden");
-        });
+          items[0].classList.remove("hidden");
+          imgShowcase[0].classList.add("active");
+          console.log(items[0]);
+          console.log(imgShowcase[0]);
 
-        items.forEach((item, index) => {
-          const lis = item.querySelectorAll("ul > li");
-          let currIMgs = imgShowcase[index].querySelectorAll("img");
-          // Run a loop through all li elements and attach an event listener to each one
-          lis.forEach((tli, index) => {
-            tli.addEventListener("click", () => {
-              // hide all other elements whose event hasn't been triggered
-              lis.forEach((inner) => {
-                inner.classList.remove("selected");
-                inner.style.opacity = "0.5";
-                let span = inner.querySelector("span");
-                span.classList.remove("display");
-                currIMgs.forEach((cimg) => {
-                  cimg.classList.remove("active");
+          li.forEach((eli) => {
+            eli.classList.remove("hidden");
+          });
+
+          items.forEach((item, index) => {
+            const lis = item.querySelectorAll("ul > li");
+            let currIMgs = imgShowcase[index].querySelectorAll("img");
+            // Run a loop through all li elements and attach an event listener to each one
+            lis.forEach((tli, index) => {
+              tli.addEventListener("click", () => {
+                // hide all other elements whose event hasn't been triggered
+                lis.forEach((inner) => {
+                  inner.classList.remove("selected");
+                  inner.style.opacity = "0.5";
+                  let span = inner.querySelector("span");
+                  span.classList.remove("display");
+                  currIMgs.forEach((cimg) => {
+                    cimg.classList.remove("active");
+                  });
                 });
+                // Body background effect
+                console.log(currIMgs[index].src);
+                document.body.style.backgroundImage = `url(${currIMgs[index].src})`;
+                document.body.style.backgroundPosition = "-50px 150px";
+                document.body.style.backgroundSize = "110vh";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backdropFilter = "blur(10px)";
+
+                // Show the element on focus
+                tli.classList.add("selected");
+                tli.style.opacity = "1";
+                let sp = tli.querySelector("span");
+                sp.classList.add("display");
+                currIMgs[index].classList.add("active");
+                imgIndex++;
+
+                // console.log(tli);
               });
-              // Body background effect
-              console.log(currIMgs[index].src);
-              document.body.style.backgroundImage = `url(${currIMgs[index].src})`;
-              document.body.style.backgroundPosition = "-50px 150px";
-              document.body.style.backgroundSize = "110vh";
-              document.body.style.backgroundRepeat = "no-repeat";
-              document.body.style.backdropFilter = "blur(10px)";
-
-              // Show the element on focus
-              tli.classList.add("selected");
-              tli.style.opacity = "1";
-              let sp = tli.querySelector("span");
-              sp.classList.add("display");
-              currIMgs[index].classList.add("active");
-              imgIndex++;
-
-              // console.log(tli);
             });
           });
         });
-      });
 
-      const buttons = document.querySelectorAll(".second nav button");
-      buttons.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          buttons.forEach((bt) => {
-            bt.classList.remove("selected");
-          });
+        const buttons = document.querySelectorAll(".second nav button");
+        buttons.forEach((btn, index) => {
+          btn.addEventListener("click", () => {
+            buttons.forEach((bt) => {
+              bt.classList.remove("selected");
+            });
 
-          btn.classList.add("selected");
-          items.forEach((it) => {
-            let itk = it.querySelectorAll("ul > li");
-            it.classList.add("hidden");
-            it.classList.remove("active");
+            btn.classList.add("selected");
+            items.forEach((it) => {
+              let itk = it.querySelectorAll("ul > li");
+              it.classList.add("hidden");
+              it.classList.remove("active");
 
-            itk.forEach((el) => {
-              el.classList.add("hidden");
+              itk.forEach((el) => {
+                el.classList.add("hidden");
+              });
+            });
+
+            imgShowcase.forEach((im) => {
+              im.classList.remove("active");
+            });
+
+            items[index].classList.add("active");
+            imgShowcase[index].classList.add("active");
+            console.log(imgShowcase[index]);
+            let itli = items[index].querySelectorAll("ul > li");
+            itli.forEach((itl) => {
+              itl.classList.remove("hidden");
             });
           });
-
-          imgShowcase.forEach((im) => {
-            im.classList.remove("active");
-          });
-
-          items[index].classList.add("active");
-          imgShowcase[index].classList.add("active");
-          console.log(imgShowcase[index]);
-          let itli = items[index].querySelectorAll("ul > li");
-          itli.forEach((itl) => {
-            itl.classList.remove("hidden");
-          });
         });
-      });
     }
 
-    return {geneRATE, decoRATE};
+    // function decoRATE(){
+    //   const items = document.querySelectorAll(".items");
+    //   const imgShowcase = document.querySelectorAll(".img-showcase");
+    //   let imgIndex = 0;
+
+    //   // window.addEventListener("load", () => {
+    //   //   const li = items[0].querySelectorAll("ul > li");
+
+    //   //   items[0].classList.remove("hidden");
+    //   //   imgShowcase[0].classList.add("active");
+
+    //   //   li.forEach((eli) => {
+    //   //     eli.classList.remove("hidden");
+    //   //   });
+        
+    //   // });
+
+    //   menuBtn.addEventListener("click", () => {
+    //     const li = items[0].querySelectorAll("ul > li");
+    //     console.log(li);
+
+    //     items[0].classList.remove("hidden");
+    //     imgShowcase[0].classList.add("active");
+    //     console.log(items[0]);
+    //     console.log(imgShowcase[0]);
+
+
+    //     li.forEach((eli) => {
+    //       eli.classList.remove("hidden");
+    //     });
+
+    //     items.forEach((item, index) => {
+    //       const lis = item.querySelectorAll("ul > li");
+    //       let currIMgs = imgShowcase[index].querySelectorAll("img");
+    //       // Run a loop through all li elements and attach an event listener to each one
+    //       lis.forEach((tli, index) => {
+    //         tli.addEventListener("click", () => {
+    //           // hide all other elements whose event hasn't been triggered
+    //           lis.forEach((inner) => {
+    //             inner.classList.remove("selected");
+    //             inner.style.opacity = "0.5";
+    //             let span = inner.querySelector("span");
+    //             span.classList.remove("display");
+    //             currIMgs.forEach((cimg) => {
+    //               cimg.classList.remove("active");
+    //             });
+    //           });
+    //           // Body background effect
+    //           console.log(currIMgs[index].src);
+    //           document.body.style.backgroundImage = `url(${currIMgs[index].src})`;
+    //           document.body.style.backgroundPosition = "-50px 150px";
+    //           document.body.style.backgroundSize = "110vh";
+    //           document.body.style.backgroundRepeat = "no-repeat";
+    //           document.body.style.backdropFilter = "blur(10px)";
+
+    //           // Show the element on focus
+    //           tli.classList.add("selected");
+    //           tli.style.opacity = "1";
+    //           let sp = tli.querySelector("span");
+    //           sp.classList.add("display");
+    //           currIMgs[index].classList.add("active");
+    //           imgIndex++;
+
+    //           // console.log(tli);
+    //         });
+    //       });
+    //     });
+    //   });
+
+    //   const buttons = document.querySelectorAll(".second nav button");
+    //   buttons.forEach((btn, index) => {
+    //     btn.addEventListener("click", () => {
+    //       buttons.forEach((bt) => {
+    //         bt.classList.remove("selected");
+    //       });
+
+    //       btn.classList.add("selected");
+    //       items.forEach((it) => {
+    //         let itk = it.querySelectorAll("ul > li");
+    //         it.classList.add("hidden");
+    //         it.classList.remove("active");
+
+    //         itk.forEach((el) => {
+    //           el.classList.add("hidden");
+    //         });
+    //       });
+
+    //       imgShowcase.forEach((im) => {
+    //         im.classList.remove("active");
+    //       });
+
+    //       items[index].classList.add("active");
+    //       imgShowcase[index].classList.add("active");
+    //       console.log(imgShowcase[index]);
+    //       let itli = items[index].querySelectorAll("ul > li");
+    //       itli.forEach((itl) => {
+    //         itl.classList.remove("hidden");
+    //       });
+    //     });
+    //   });
+    // }
+
+    return {geneRATE};
 
 })();
 

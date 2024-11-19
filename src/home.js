@@ -1,7 +1,7 @@
 import imageMid from "./Assets/ImageMid.png";
 import sideDishImage from "./Assets/sideDishPhoto.jpg";
 import leftAnim from "./Assets/left-anim.png";
-import rightAnim from "./Assets/right-anim.png";
+import rightAnim from "./Assets/rightAnim.png";
 import theVid from "./Assets/theVid.mp4";
 import leftTop from "./Assets/left-top.png";
 import rightBottom from "./Assets/right-bottom.png";
@@ -80,6 +80,8 @@ const home = (function () {
 
     // Third Div Engine (Award)
     const awImgs = [leftAnim, rightAnim];
+    console.log(leftAnim);
+    console.log(rightAnim);
     let awIndex = 0;
     for (let i = 0; i < 3; i++) {
       let div = document.createElement("div");
@@ -111,6 +113,7 @@ const home = (function () {
       }
 
       if(i < 2){
+        console.log(awIndex);
         awIndex++;
       }
 
