@@ -7,22 +7,28 @@ const homeBtn = document.getElementById("home-btn");
 const menuBtn = document.getElementById("menu-btn");
 const content = document.getElementById("content");
 
-function clear(){
-  // const allArr = document.querySelectorAll(".active");
-  // allArr.forEach(all => {
-  //   all.classList.remove("active");
-  // });
+function clear(arg = 0){
+  
+  if(arg === 1){
+    console.log("Nuke it!!");
+    document.body.style.cssText = '';
 
-  // if(document.querySelectorAll(".items") !== null){
-  //   const mArr = document.querySelectorAll("#content *")
-  //   mArr.forEach((marr) => {
-  //     marr.classList.add("hidden");
-  //   });
-  // }
-
+    Object.assign(document.body.style, {
+        margin: '0',
+        padding: '0',
+        minHeight: '100vh',
+        width: '100%',
+        overflowX: 'hidden',
+        background: '#fff',
+        fontFamily: "leg",
+        fontWeight: 'bold',
+        transition: 'all 0.5s ease',
+        backdropFilter: 'blur(0px)'
+    });
+  }
   content.innerHTML = '';
-  // setTimeout(() => {
-  // }, 1000);
+
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   homeBtn.addEventListener("click", () => {
-    clear();
+    clear(1);
     home.geneRATE();
     home.decoRATE();
   });

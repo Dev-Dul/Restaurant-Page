@@ -85,35 +85,31 @@ const home = (function () {
     let awIndex = 0;
     for (let i = 0; i < 3; i++) {
       let div = document.createElement("div");
-      let img = document.createElement("img");
-      img.src = awImgs[awIndex];
 
       if (i === 1) {
         let h2 = document.createElement("h2");
-        h2.textContent = "Your taste buds deserve the best.";
+        h2.append(document.createTextNode("Your taste buds deserve the best."));
+
         let p = document.createElement("p");
-        p.textContent =
-          "Find out why Sizzle is a national treasure among foodies!. ";
+        p.append(document.createTextNode("Find out why Sizzle is a national treasure among foodies!. "));
+        
         let p2 = document.createElement("p");
-        p2.textContent =
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aspernatur adipisci minima distinctio accusantium et quis at doloremque laudantium aperiam!";
+        p2.append(document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aspernatur adipisci minima distinctio accusantium et quis at doloremque laudantium aperiam!"));
         let elems = [h2, p, p2];
 
         for (let j = 0; j < 3; j++) {
           let span = document.createElement("span");
-          span.setAttribute("style", `--i: ${i + 1}`);
-          elems[i].appendChild(span);
+          span.setAttribute("style", `--i: ${j + 1}`);
+          elems[j].appendChild(span);
         }
 
         div.appendChild(h2);
         div.appendChild(p);
         div.appendChild(p2);
       } else {
+        let img = document.createElement("img");
+        img.src = awImgs[awIndex];
         div.appendChild(img);
-      }
-
-      if(i < 2){
-        console.log(awIndex);
         awIndex++;
       }
 
@@ -135,12 +131,12 @@ const home = (function () {
     // Fifth Div Engine (day)
     const dayArr = ["img-left himg", "bxs", "img-right himg"];
     const dayImgs = [leftTop, rightBottom];
+
     let dayIndex = 0;
     for (let i = 0; i < 3; i++) {
       let div = document.createElement("div");
       div.setAttribute("class", dayArr[i]);
-      let img = document.createElement("img");
-      img.src = dayImgs[dayIndex];
+      
 
       if (i === 1) {
         let div2 = document.createElement("div");
@@ -153,7 +149,7 @@ const home = (function () {
         div3.setAttribute("class", "boxes");
         for (let j = 0; j < 9; j++) {
           let div4 = document.createElement("div");
-          div4.setAttribute("style", `--i: ${i + 1}`);
+          div4.setAttribute("style", `--i: ${j + 1}`);
 
           let p2 = document.createElement("p");
           p2.textContent = "Lorem ipsum dolor sit amet consectetur.";
@@ -165,12 +161,13 @@ const home = (function () {
         div.appendChild(div2);
         div.appendChild(div3);
       } else {
+        let img = document.createElement("img");
+        img.src = dayImgs[dayIndex];
         div.appendChild(img);
-      }
-
-      if(i < 2){
         dayIndex++;
       }
+
+    
       content.children[4].appendChild(div);
     }
 
@@ -316,32 +313,41 @@ const home = (function () {
     observer.observe(par);
     observer.observe(award);
 
-    function playVid() {
-      let oldScroll = window.scrollY;
-      window.addEventListener("scroll", () => {
-        if (oldScroll < window.scrollY) {
-          if (video.currentTime < video.duration) {
-            video.currentTime += (window.scrollY / 300) * 0.02;
-          }
-        } else {
-          video.currentTime -= (window.scrollY / 300) * 0.02;
-        }
-        oldScroll = window.scrollY;
-      });
-    }
+    // function playVid() {
+    //   let oldScroll = window.scrollY;
+    //   window.addEventListener("scroll", () => {
+    //     if (oldScroll < window.scrollY) {
+    //       if (video.currentTime < video.duration) {
+    //         video.currentTime += (window.scrollY / 300) * 0.02;
+    //       }
+    //     } else {
+    //       video.currentTime -= (window.scrollY / 300) * 0.02;
+    //     }
+    //     oldScroll = window.scrollY;
+    //   });
+    // }
+
+    video.controls = true;
 
     const vidObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            playVid();
+            // playVid();
+            // video.play();
+            video.autoplay = true;
+            video.loop = true;
+
+          }else{
+            video.autoplay = false;
+            video.loop = false;
           }
         });
       },
-      { threshold: 0.5}
+      { threshold: 0.3}
     );
 
-    // vidObserver.observe(vidpar);
+    vidObserver.observe(vidpar);
   }
 
   return { geneRATE, decoRATE };

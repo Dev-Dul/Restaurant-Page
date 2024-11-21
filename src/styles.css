@@ -24,7 +24,7 @@
 }
 
 @font-face {
-    font-family: "land";
+    font-family: "land-unite";
     src: url("./Assets2/1-fonts/land-unite.otf");
 }
 
@@ -49,10 +49,6 @@
     src: url("./Assets4/Fonts/aspect.ttf");
 }
 
-
-*{
-    border: 1px solid red;
-}
 
 body{
     margin: 0;
@@ -91,11 +87,11 @@ div.logo{
     padding: 0.5rem 1.5rem;
 }
 
-.logo h2{
+#header .logo h2{
     margin: 0;
     color: #15db95;
     font-size: 2.5rem;
-    font-family: "Insight";
+    font-family: "against";
 }
 
 header nav{
@@ -169,7 +165,7 @@ h1{
 .sub{
     position: relative;
     left: 650px;
-    top: 190px;
+    top: 150px;
     opacity: 0;
     font-size: 1.3rem;
     color: #2dc653;
@@ -570,7 +566,7 @@ img{
     background-color: #15db9580;
 }
 
-.footer h2{
+#footer h2{
     margin: 0;
     font-family: "britt";
     font-size: 4.5rem;
@@ -629,11 +625,11 @@ nav button{
     transform: translate(-100vh);
 }
 
-.first h2{
+#top .first h2{
     margin: 0;
     color: #15db95;
     font-size: 3rem;
-    font-family: "land";
+    font-family: "land-unite";
 }
 
 .second nav button{
