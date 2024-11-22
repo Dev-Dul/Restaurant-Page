@@ -2,11 +2,13 @@ import "./styles.css";
 import { home } from "./home.js";
 import menuEngine from "./menu.js";
 import aboutEngine from "./about.js";
+import revEngine from "./reviews.js";
 
 
 const homeBtn = document.getElementById("home-btn");
 const menuBtn = document.getElementById("menu-btn");
 const aboutBtn = document.getElementById("about-btn");
+const reviewsBtn = document.getElementById("rev-btn");
 const content = document.getElementById("content");
 
 function clear(arg = 0){
@@ -57,6 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     clear(1);
     aboutEngine.geneRATE();
     aboutEngine.decoRATE();
+  });
+
+
+  reviewsBtn.addEventListener("click", () => {
+    clear(1);
+    revEngine.geneRATE();
+    revEngine.decoRATE();
   });
 
   home.geneRATE();

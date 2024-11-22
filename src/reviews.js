@@ -1,4 +1,4 @@
-const reviewsEngine = (function(){
+const revEngine = (function(){
     const revBtn = document.getElementById("rev-btn");
     const content = document.getElementById("content");
     function geneRATE(){
@@ -6,6 +6,7 @@ const reviewsEngine = (function(){
         for (let i = 0; i < 2; i++) {
           let div = document.createElement("div");
           div.setAttribute("class", divCl[i]);
+          div.setAttribute("id", divCl[i]);
 
           content.appendChild(div);
         }
@@ -15,6 +16,7 @@ const reviewsEngine = (function(){
         for (let i = 0; i < 2; i++) {
           let div = document.createElement("div");
           div.setAttribute("class", hArr[i]);
+          div.setAttribute("id", hArr[i]);
 
           if (i === 0) {
             let h2 = document.createElement("h2");
@@ -78,23 +80,24 @@ const reviewsEngine = (function(){
         const h2 = document.querySelector(".heading > h2");
         const revs = document.querySelectorAll(".rev");
 
-        window.addEventListener("load", () => {
-          h2.classList.add("active");
-          revs.forEach((rev) => {
-            rev.classList.add("active");
-          });
-        });
+        // window.addEventListener("load", () => {
+        //   h2.classList.add("active");
+        //   revs.forEach((rev) => {
+        //     rev.classList.add("active");
+        //   });
+        // });
 
-        revBtn.addEventListener("click", () => {
+        setTimeout(() => {
           h2.classList.add("active");
           revs.forEach((rev) => {
             rev.classList.add("active");
           });
-        });
+        }, 300);
+
 
     }
 
     return {geneRATE, decoRATE};
 })();
 
-export default reviewsEngine;
+export default revEngine;
