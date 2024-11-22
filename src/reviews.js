@@ -46,6 +46,16 @@ const revEngine = (function(){
               let h3 = document.createElement("h3");
               let p = document.createElement("p");
 
+              let star = document.createElement("div");
+              star.setAttribute("class", "stars");
+
+              for (let s = 0; s < 5; s++) {
+                let i = document.createElement("i");
+                i.setAttribute("class", "fa-solid fa-star");
+
+                star.appendChild(i);
+              }
+
               div2.setAttribute("class", "rev");
               div2.setAttribute("style", `--r: ${j + 1}`);
               h3.textContent = revArr[j];
@@ -54,6 +64,7 @@ const revEngine = (function(){
 
               div2.appendChild(h3);
               div2.appendChild(p);
+              div2.appendChild(star);
 
               div.appendChild(div2);
             }

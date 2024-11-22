@@ -1120,6 +1120,7 @@ h2:not(.lg-logo h2){
 #heading h2{
     opacity: 0;
     position: fixed;
+    display: flex;
     font-size: 1.8rem;
     color: #15db95;
     font-family: "aspect";
