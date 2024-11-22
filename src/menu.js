@@ -1,5 +1,4 @@
 import imgBank from "./images.js";
-const menuBtn = document.getElementById("menu-btn");
 const content = document.getElementById("content");
 
 const menuEngine = (function () {
@@ -151,7 +150,7 @@ const menuEngine = (function () {
       li.forEach((eli) => {
         eli.classList.remove("hidden");
       });
-    }, 1000);
+    }, 800);
 
 
       items.forEach((item, index) => {

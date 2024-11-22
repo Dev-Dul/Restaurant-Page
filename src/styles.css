@@ -24,7 +24,7 @@
 }
 
 @font-face {
-    font-family: "land-unite";
+    font-family: "land";
     src: url("./Assets2/1-fonts/land-unite.otf");
 }
 
@@ -165,7 +165,7 @@ h1{
 .sub{
     position: relative;
     left: 650px;
-    top: 150px;
+    top: 170px;
     opacity: 0;
     font-size: 1.3rem;
     color: #2dc653;
@@ -629,7 +629,7 @@ nav button{
     margin: 0;
     color: #15db95;
     font-size: 3rem;
-    font-family: "land-unite";
+    font-family: "land";
 }
 
 .second nav button{
@@ -867,7 +867,7 @@ h2:not(.lg-logo h2){
 
 
 .lg-logo h2 span{
-    margin: 0;
+    margin: 25px;
     padding: 0;
     opacity: 0;
     display: inline-block;
