@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     home.decoRATE();
   });
 
-
   home.geneRATE();
   home.decoRATE();
 
