@@ -1119,14 +1119,38 @@ h2:not(.lg-logo h2){
 
 #heading h2{
     opacity: 0;
-    position: fixed;
-    display: flex;
+    /* position: fixed; */
+    /* display: flex; */
     font-size: 1.8rem;
     color: #15db95;
     font-family: "aspect";
     text-align: center;
     transition: all 2s ease;
+    transform: translateY(50px);
+}
+
+/* .heading{
+    left: 0;
+    position: fixed;
+    display: flex;
+    height: 100%;
+    align-self: start;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.heading h2{
+    opacity: 0;
+    position: fixed;
+    font-size: 2rem;
+    transition: all 2s ease;
     transform: translateY(150px);
+} */
+
+.heading h2.active{
+    opacity: 1;
+    transform: translate(0);
 }
 
 #heading h2.active{

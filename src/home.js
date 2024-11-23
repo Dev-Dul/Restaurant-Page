@@ -118,8 +118,11 @@ const home = (function () {
 
     // Fourth Div Engine (Vid)
     let video = document.createElement("video");
-    video.setAttribute("muted", true);
     video.setAttribute("id", "video");
+    video.setAttribute("muted", "");
+    video.autoplay = true;
+    video.loop = true;
+    // video.muted = true;
 
     let source = document.createElement("source");
     source.src = theVid;
@@ -327,7 +330,7 @@ const home = (function () {
     //   });
     // }
 
-    video.controls = true;
+    // video.controls = true;
 
     const vidObserver = new IntersectionObserver(
       (entries) => {
@@ -335,12 +338,12 @@ const home = (function () {
           if (entry.isIntersecting) {
             // playVid();
             // video.play();
-            video.autoplay = true;
-            video.loop = true;
+            // video.autoplay = true;
+            // video.loop = true;
 
           }else{
-            video.autoplay = false;
-            video.loop = false;
+            // video.autoplay = false;
+            // video.loop = false;
           }
         });
       },
