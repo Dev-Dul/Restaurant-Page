@@ -3,6 +3,7 @@ import { home } from "./home.js";
 import menuEngine from "./menu.js";
 import aboutEngine from "./about.js";
 import revEngine from "./reviews.js";
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 const homeBtn = document.getElementById("home-btn");
@@ -27,7 +28,7 @@ function clear(arg = 0){
         fontFamily: "leg",
         fontWeight: 'bold',
         transition: 'all 0.5s ease',
-        backdropFilter: 'blur(0px)'
+        backdropFilter: 'blur(0px)',
     });
   }
   content.innerHTML = '';

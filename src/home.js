@@ -337,7 +337,7 @@ const home = (function () {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // playVid();
-            // video.play();
+            video.play();
             // video.autoplay = true;
             // video.loop = true;
 
