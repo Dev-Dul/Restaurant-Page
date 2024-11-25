@@ -192,7 +192,7 @@ const home = (function () {
     const flow = document.getElementById("flow");
     const mid = document.getElementById("mid");
     const txt = document.getElementById("intro-txt"),
-      h1 = document.getElementsByTagName("h1"),
+      h1 = document.getElementById("txt"),
       sub = document.getElementById("sub"),
       award = document.getElementById("award"),
       awimgs = document.querySelectorAll(".award div img"),
@@ -208,13 +208,13 @@ const home = (function () {
       imgs2 = document.querySelectorAll(".img-right img");
 
     flow.addEventListener("animationend", () => {
-      Array.from(h1[0].querySelectorAll("span")).forEach((el) => {
+      Array.from(h1.querySelectorAll("span")).forEach((el) => {
         el.classList.add("active");
       });
       sub.classList.add("active");
 
       function checkActivation() {
-        const spansActive = Array.from(h1[0].querySelectorAll("span")).every(
+        const spansActive = Array.from(h1.querySelectorAll("span")).every(
           (el) => el.classList.contains("active")
         );
         const subActive = sub.classList.contains("active");
