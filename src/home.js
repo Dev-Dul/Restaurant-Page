@@ -120,9 +120,7 @@ const home = (function () {
     let video = document.createElement("video");
     video.setAttribute("id", "video");
     video.setAttribute("muted", "");
-    video.autoplay = true;
     video.loop = true;
-    // video.muted = true;
 
     let source = document.createElement("source");
     source.src = theVid;
@@ -199,8 +197,8 @@ const home = (function () {
       award = document.getElementById("award"),
       awimgs = document.querySelectorAll(".award div img"),
       awtxt = document.querySelectorAll(".award div h2 span, .award div p span"),
-      video = document.getElementById("video");
-      // vidpar = video.parentElement;
+      video = document.getElementById("video"),
+      vidpar = video.parentElement;
     const mids = document.getElementsByClassName("mids");
     const par = document.getElementById("par"),
       boxp = document.getElementById("boxp"),
@@ -316,34 +314,15 @@ const home = (function () {
     observer.observe(par);
     observer.observe(award);
 
-    // function playVid() {
-    //   let oldScroll = window.scrollY;
-    //   window.addEventListener("scroll", () => {
-    //     if (oldScroll < window.scrollY) {
-    //       if (video.currentTime < video.duration) {
-    //         video.currentTime += (window.scrollY / 300) * 0.02;
-    //       }
-    //     } else {
-    //       video.currentTime -= (window.scrollY / 300) * 0.02;
-    //     }
-    //     oldScroll = window.scrollY;
-    //   });
-    // }
-
-    // video.controls = true;
 
     const vidObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // playVid();
-            video.play();
-            // video.autoplay = true;
-            // video.loop = true;
+            video.autoplay = true;
 
           }else{
-            // video.autoplay = false;
-            // video.loop = false;
+            video.autoplay = false;
           }
         });
       },

@@ -25,6 +25,10 @@ const menuEngine = (function () {
         div2.appendChild(h2);
       } else {
         let nav = document.createElement("nav");
+        let sp = document.createElement("p");
+        sp.setAttribute("class", "toView");
+        sp.textContent = "Click on an item to view it";
+
         for (let j = 0; j < 4; j++) {
           let bt = document.createElement("button");
           bt.textContent = btn[j];
@@ -33,6 +37,7 @@ const menuEngine = (function () {
         }
 
         div2.appendChild(nav);
+        div2.appendChild(sp);
       }
       content.children[0].appendChild(div2);
     }
@@ -138,6 +143,7 @@ const menuEngine = (function () {
   function decoRATE() {
     const items = document.querySelectorAll(".items");
     const imgShowcase = document.querySelectorAll(".img-showcase");
+    const buttons = document.querySelectorAll(".second nav button");
     let imgIndex = 0;
 
 
@@ -150,6 +156,9 @@ const menuEngine = (function () {
       li.forEach((eli) => {
         eli.classList.remove("hidden");
       });
+      
+      buttons[0].classList.add("selected");
+
     }, 800);
 
 
@@ -191,7 +200,6 @@ const menuEngine = (function () {
         });
       });
 
-    const buttons = document.querySelectorAll(".second nav button");
     let itli = null;
 
     buttons.forEach((btn, index) => {

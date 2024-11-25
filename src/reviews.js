@@ -23,7 +23,7 @@ const revEngine = (function(){
             let span = document.createElement("span");
             let br = document.createElement("br");
             span.appendChild(br);
-            span.textContent = "love Us!";
+            span.textContent = " love Us!";
 
             h2.textContent = "Here's Why Our Customers";
             h2.appendChild(span);
@@ -90,6 +90,7 @@ const revEngine = (function(){
     function decoRATE(){
         const h2 = document.querySelector(".heading > h2");
         const revs = document.querySelectorAll(".rev");
+        const btns = document.querySelectorAll("#header nav button");
 
         // window.addEventListener("load", () => {
         //   h2.classList.add("active");
@@ -97,6 +98,10 @@ const revEngine = (function(){
         //     rev.classList.add("active");
         //   });
         // });
+
+        btns.forEach((navbtn) => {
+          navbtn.classList.add("revs");
+        });
 
         setTimeout(() => {
           h2.classList.add("active");

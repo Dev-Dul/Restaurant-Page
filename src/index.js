@@ -10,9 +10,11 @@ const homeBtn = document.getElementById("home-btn");
 const menuBtn = document.getElementById("menu-btn");
 const aboutBtn = document.getElementById("about-btn");
 const reviewsBtn = document.getElementById("rev-btn");
+const navBtns = document.querySelectorAll("#header nav button");
 const content = document.getElementById("content");
 
 function clear(arg = 0){
+
   
   if(arg === 1){
     console.log("Nuke it!!");
@@ -27,10 +29,11 @@ function clear(arg = 0){
         background: '#fff',
         fontFamily: "leg",
         fontWeight: 'bold',
-        transition: 'all 0.5s ease',
-        backdropFilter: 'blur(0px)',
+        transition: 'all 0.5s ease'
+        // backdropFilter: 'blur(0px)',
     });
   }
+
   content.innerHTML = '';
 
 
@@ -38,6 +41,22 @@ function clear(arg = 0){
 
 document.addEventListener("DOMContentLoaded", () => {
   
+
+  navBtns.forEach((navBtn, index) => {
+    navBtn.addEventListener("click", () => {
+      navBtns.forEach(btn => {
+        btn.classList.remove("selected");
+      });
+
+      if(index !== 3){
+        navBtns.forEach((navbtn) => {
+          navbtn.classList.remove("revs");
+        });
+      }
+
+      navBtns[index].classList.add("selected");
+    });
+  })
   
 
   homeBtn.addEventListener("click", () => {
@@ -71,5 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   home.geneRATE();
   home.decoRATE();
+  homeBtn.classList.add("selected");
 
 });
